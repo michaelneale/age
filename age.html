@@ -1,0 +1,36 @@
+<html> 
+
+  <head>
+    <script> 
+      function howOld(birthDay) {
+        var ageInMS = (new Date()).getTime() - new Date(birthDay).getTime();
+        return (ageInMS / 1000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+      
+      var oliver = 'Thu Oct 31 2008 19:40:00 GMT+1000';
+      var chloe = 'Thu Jul 24 2003 19:15:00 GMT+1000';
+      
+      function showAge() {
+        //console.log(howOld(oliver));
+        document.getElementById('oliAge').textContent = howOld(oliver);
+        document.getElementById('chloeAge').textContent = howOld(chloe);
+        
+      }      
+      
+      setInterval(showAge, 1000);
+      
+      
+    </script> 
+  </head>
+  <title>How old am oli?</title>
+  <body> 
+    <h1>This will calculate how old oli is in seconds</h1>    
+    <div id='oliAge'>calculating...</div>
+    
+    <h1>This will calculate how old Chloe is in seconds</h1>    
+    <div id='chloeAge'>calculating...</div>
+    
+
+   </body> 
+
+</html>
